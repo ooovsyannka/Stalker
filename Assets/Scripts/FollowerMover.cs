@@ -1,5 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 
@@ -7,12 +6,8 @@ public class FollowerMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _distance = 3;
-    [SerializeField] private float _rayLength = 1.3f;
-
-    [SerializeField] private float _gravityFactor;
 
     private Rigidbody _rigidbody;
-    private RaycastHit _slopeDetector;
 
     private void Awake()
     {
@@ -31,6 +26,6 @@ public class FollowerMover : MonoBehaviour
 
     private void Move(Vector3 target)
     {
-        _rigidbody.MovePosition(transform.position + _speed * Time.fixedDeltaTime * target);
+        _rigidbody.MovePosition(transform.position + target * (_speed * Time.deltaTime));
     }
 }
