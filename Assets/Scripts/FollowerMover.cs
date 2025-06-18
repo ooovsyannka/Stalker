@@ -24,8 +24,8 @@ public class FollowerMover : MonoBehaviour
         }
     }
 
-    private void Move(Vector3 target)
+    private void Move(Vector3 direction)
     {
-        _rigidbody.MovePosition(transform.position + target * (_speed * Time.fixedDeltaTime));
+        _rigidbody.MovePosition(transform.position + direction * (_speed * Time.fixedDeltaTime));
     }
 }
