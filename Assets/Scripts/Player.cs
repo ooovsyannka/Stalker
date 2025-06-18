@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private InputReader _inputReader;
+
     private Looking _looking;
     private PlayerMover _mover;
 
@@ -12,16 +13,6 @@ public class Player : MonoBehaviour
     {
         _looking = GetComponent<Looking>();
         _mover = GetComponent<PlayerMover>();
-    }
-
-    private void OnEnable()
-    {
-        _inputReader.JumButtonClicked += _mover.TryJump;
-    }
-
-    private void OnDisable()
-    {
-        _inputReader.JumButtonClicked -= _mover.TryJump;
     }
 
     private void Update()
