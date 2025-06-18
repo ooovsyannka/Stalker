@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InputReader : MonoBehaviour
 {
@@ -10,5 +9,4 @@ public class InputReader : MonoBehaviour
 
     public Vector3 InputDirection=>  new Vector3(Input.GetAxis(Horizontal), 0, Input.GetAxis(Vertical));
     public Vector3 MouseDelta=> new Vector3(Input.GetAxis(AxisMouseX), Input.GetAxis(AxisMouseY), 0);  
-    public bool IsSprint => Input.GetKey(KeyCode.LeftShift); 
 }

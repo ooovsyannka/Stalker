@@ -18,7 +18,7 @@ public class FollowerMover : MonoBehaviour
     {
         if (Vector3Extensions.IsEnoughClose(transform.position, targetPosition, _distance) == false)
         {
-            Vector3 direction = new Vector3(targetPosition.x - transform.position.x, 0, targetPosition.z - transform.position.z).normalized;
+            Vector3 direction = (targetPosition - transform.position).normalized;
 
             Move(direction);
         }

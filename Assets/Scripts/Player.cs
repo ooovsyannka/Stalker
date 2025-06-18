@@ -17,15 +17,6 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (_inputReader.IsSprint)
-        {
-            _mover.SetSprintSpeed();
-        }
-        else
-        {
-            _mover.SetNoramlSpeed();
-        }
-
         _mover.Move(_inputReader.InputDirection);
         _looking.Look(_inputReader.MouseDelta);
         _mover.TryFall();
